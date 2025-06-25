@@ -4,6 +4,9 @@ Encrypts Files by converting them into sounds that uses different Frequencies fo
 # **Things to Know**
 **This is in being Active Worked on so dont expect it to be Perfectly Smooth.**
 
+**THIS IS NOT A VIRUS, I converted the python generator script to an executable
+and now it's having false positives.**
+
 # **How it works**
 
 FileSound has a generator that generates an encoder and decoder, and it generates **64** different sounds frequencies 
