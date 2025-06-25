@@ -4,14 +4,6 @@ Encrypts Files by converting them into sounds that uses different Frequencies fo
 # **Things to Know**
 **This is in being Active Worked on so dont expect it to be Perfectly Smooth.**
 
-I found a bug with the software generator that makes you have to cd to the path of the generator,
-how you can run it will be in the commands below:
-
-**Step 1: Run "cd C:\Users\Your Name\Rest of Path"**
-
-**Step 2: Run "python generate_software.py"**
-
-
 # **How it works**
 
 FileSound has a generator that generates an encoder and decoder, and it generates **64** different sounds frequencies 
@@ -23,3 +15,18 @@ and then back into bytes which is then translated into the original file.
 The encoder also encodes the file name and extension into the WAV file. The encoded metadata is then filtered out
 of the conversion by the Decoder and then translated back into the name and extension,
 which is used when saving the decoded file into a path.
+
+# **How to Setup**
+
+**Step 1: Download the Executable generator, this will generate your encoder and decoder
+With a Unique set of Frequencies.**
+
+**Step 2: Run the executable, it does NOT need administrative privileges, only try if you encounter problems.**
+
+**Step 3: Run the Encoder and select the file, it will then convert it into a .wav audio file and say the path its stored at**
+
+**Step 4: send the wav to a friend or someone else, also send the decoder in a more secure way like a USB drive if
+you can**
+
+**Step 5: As the receiver open the Decoder and select the .wav file that you were sent or given, it will let you choose where
+to save it to once it finishes converting.**
