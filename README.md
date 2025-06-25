@@ -5,7 +5,7 @@ Encrypts Files by converting them into sounds that uses different Frequencies fo
 **The encrypted WAV version will be approximately 500 times larger than the original file
 for now, i will work on shrinking it. Keep in mind this is just a Proof-of-Concept for now.**
 
-**This is in being Active Worked on so dont expect it to be Perfectly Smooth.**
+**This is in being Actively Worked on so dont expect it to be Perfectly Smooth.**
 
 **THIS IS NOT A VIRUS, I converted the python generator script to an executable
 and now it's having false positives.**
