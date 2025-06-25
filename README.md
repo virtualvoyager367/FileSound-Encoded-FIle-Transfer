@@ -1,7 +1,8 @@
-# FileSound
+# **FileSound**
 Encrypts Files by converting them into sounds that uses different Frequencies for each generated pair of an encoder and decoder.
 
-**How it works**
+# **How it works**
+
 FileSound has a generator that generates an encoder and decoder, and it generates 64 different sounds frequencies 
 that the encoder and decoder uses to encode and decode the file.
 When it Encodes a file it converts the file into bits and then converts it into symbols, 
