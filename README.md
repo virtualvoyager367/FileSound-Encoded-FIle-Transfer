@@ -6,6 +6,7 @@ I found a bug with the software generator that makes you have to cd to the path 
 how you can run it will be in the commands below:
 
 **Step 1: Run "cd C:\Users\Your name\Desktop"**
+
 **Step 2: Run "python generate_software.py"**
 
 
