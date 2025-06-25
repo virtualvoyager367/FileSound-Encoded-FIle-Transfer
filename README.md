@@ -2,6 +2,8 @@
 Encrypts Files by converting them into sounds that uses different Frequencies for each generated pair of an encoder and decoder.
 
 # **Things to Know**
+**This is in being Active Worked on so dont expect it to be Perfectly Smooth.**
+
 I found a bug with the software generator that makes you have to cd to the path of the generator,
 how you can run it will be in the commands below:
 
