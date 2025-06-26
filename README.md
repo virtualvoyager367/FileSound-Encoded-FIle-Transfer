@@ -1,11 +1,11 @@
 # **FileSound**
-Encrypts Files by converting them into sounds that uses 64 different Frequencies for each generated pair of both an encoder and decoder.
+Encodes Files by converting them into sounds that uses 64 different Frequencies for each generated pair of both an encoder and decoder.
 It is Extremely unlikely to generate a specific set of frequencies twice since the **number of possible sets of combinations is 54 undecillion**
 but if you want to know the exact number its **54,204,153,136,379,052,093,556,100,127,711,666,460,939,540,181,254,490,007,193,190,634,237,965,004,712,629,811,635,632,850**
 possible sets of random frequencies.
 
 # **Things to Know**
-**The encrypted WAV version will be approximately 500 times larger than the original file
+**The encoded WAV version will be approximately 500 times larger than the original file
 for now, i will work on shrinking it. Keep in mind this is just a Proof-of-Concept for now.**
 
 **The .py file in the repository is just meant for open-sourcing it, if you want to run it download the newest EXE version.
