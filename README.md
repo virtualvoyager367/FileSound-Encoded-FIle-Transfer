@@ -35,10 +35,11 @@ With a Unique set of Frequencies.**
 
 **Step 2: Run the executable, it does NOT need administrative privileges, only try if you encounter problems.**
 
-**Step 3: Run the Encoder and select the file, it will then convert it into a .wav audio file and say the path its stored at**
+**Step 3: Run the Encoder and select the file, it will then convert it into a .wav audio file and say the path its stored
+In on your Device.**
 
 **Step 4: send the wav to a friend or someone else, also send the decoder in a more secure way like a USB drive if
-you can**
+you can.**
 
 **Step 5: As the receiver open the Decoder and select the .wav file that you were sent or given, it will let you choose where
 to save it to once it finishes converting.**
