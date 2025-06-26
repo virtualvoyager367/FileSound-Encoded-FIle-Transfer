@@ -13,17 +13,17 @@ for now, i will work on shrinking it. Keep in mind this is just a Proof-of-Conce
 **The .py file in the repository is just meant for open-sourcing it, if you want to run it download the newest EXE version.
 yes, the executable is safe, it's just the python script converted to an exe file.**
 
-**This is in being Actively Worked on so dont expect it to be Perfectly Smooth.**
+**This is being Actively Worked on so dont expect it to be Perfectly Smooth.**
 
-**This may appear to be a virus to any anti-virus, this happens with the Exe since I converted the
-python generator script to an executable and now it's having false positives.**
+**This may trigger false positives from some anti-viruses, this happens with the Exe since I converted the
+python generator script to an executable**
 
 # **How it works**
 
-FileSound has a generator that generates an encoder and decoder, and it generates **64** different sounds frequencies 
+FileSound has a generator that generates an encoder and decoder, and it generates **64** different sound frequencies 
 that the encoder and decoder uses to encode and decode the file.
 When it Encodes a file it converts the file into bits and then converts it into symbols, 
-which is then converted into a WAV audio file that is on a spectrum people can hear, when the WAV audio file is
+which is then converted into a WAV audio file that is within the audible range that people can hear, when the WAV audio file is
 put into the decoder it uses those frequencies to convert the sound back into symbols, then to bits,
 and then back into bytes which is then translated into the original file.
 The encoder also encodes the file name and extension into the WAV file. The encoded metadata is then filtered out
@@ -43,7 +43,7 @@ In on your Device.**
 **Step 4: send the wav to a friend or someone else, also send the decoder in a more secure way like a USB drive if
 you can.**
 
-**Step 5: As the receiver open the Decoder and select the .wav file that you were sent or given, it will let you choose where
+**Step 5: As the receiver open the Decoder and select the .wav file that you received, it will let you choose where
 to save it to once it finishes converting.**
 
 # **What went into the Process of making this.**
@@ -51,7 +51,7 @@ to save it to once it finishes converting.**
 FileSound started as a fun project but became difficult over time as more features were being developed to make a new way to transfer files using audio. The idea was to encode any file into a sequence of audio tones and with each tone representing a chunk of bits and then decode it back perfectly without errors, making file transfer easily possible through just sound.
 One of the biggest challenges was managing large files without exhausting system memory. Initially, encoding needed to load the entire file into RAM, which quickly became impractical for bigger files.
 
-To fix this issue, I added streaming audio encoding and decoding, which processes files chunk-by-chunk. This means that the program reads a small piece of the file, encodes it into audio right as the pieces are generated, and then moves on to the next chunk. This way, memory usage stays low, and FileSound can encode and decode much larger files with near no errors.
+To fix this issue, I added streaming audio encoding and decoding, which processes files chunk-by-chunk. This means that the program reads a small piece of the file, encodes it into audio right as the pieces are generated, and then moves on to the next chunk. This way, memory usage stays low, and FileSound can encode and decode much larger files with almost no errors.
 
 **Here’s a key snippet from the encoder showing this chunked approach:**
 
