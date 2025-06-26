@@ -1,5 +1,5 @@
 # **FileSound**
-Encrypts Files by converting them into sounds that uses different Frequencies for each generated pair of an encoder and decoder.
+Encrypts Files by converting them into sounds that uses 64 different Frequencies for each generated pair of both an encoder and decoder.
 
 # **Things to Know**
 **The encrypted WAV version will be approximately 500 times larger than the original file
