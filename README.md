@@ -7,8 +7,7 @@ possible sets of random frequencies.
 
 # **Things to Know**
 
-**The encoded WAV version will be approximately 500 times larger than the original file
-for now, i will work on shrinking it. Keep in mind this is just a Proof-of-Concept for now.**
+**The encoded WAV version is approximately 295 times larger than the original file.**
 
 **The .py file in the repository is just meant for open-sourcing it, if you want to run it download the newest EXE version.
 yes, the executable is safe, it's just the python script converted to an exe file.**
