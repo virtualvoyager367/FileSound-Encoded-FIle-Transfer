@@ -1,10 +1,12 @@
 # **FileSound**
+
 Encodes Files by converting them into sounds that uses 64 different Frequencies for each generated pair of both an encoder and decoder.
 It is Extremely unlikely to generate a specific set of frequencies twice since the **number of possible sets of combinations is 54 undecillion**
 but if you want to know the exact number its **54,204,153,136,379,052,093,556,100,127,711,666,460,939,540,181,254,490,007,193,190,634,237,965,004,712,629,811,635,632,850**
 possible sets of random frequencies.
 
 # **Things to Know**
+
 **The encoded WAV version will be approximately 500 times larger than the original file
 for now, i will work on shrinking it. Keep in mind this is just a Proof-of-Concept for now.**
 
@@ -43,3 +45,32 @@ you can.**
 
 **Step 5: As the receiver open the Decoder and select the .wav file that you were sent or given, it will let you choose where
 to save it to once it finishes converting.**
+
+# **What went into the Process of making this.**
+
+FileSound started as a fun but difficult project to create a new way to transfer files using audio. The main idea was to encode any file into a sequence of audio tones with each tone representing a chunk of bits and then decode it back perfectly without errors, making file transfer possible through just sound.
+
+One of the biggest challenges was managing large files without exhausting system memory. Initially, encoding needed to load the entire file into RAM, which quickly became impractical for bigger files.
+
+To solve this, I implemented streaming audio encoding and decoding, which processes files chunk-by-chunk. This means the program reads a small piece of the file, encodes it into audio right as the pieces are generated, and then it writes that audio to disk immediately, and then moves on to the next chunk. This way, memory usage stays low, and FileSound can handle much larger files smoothly.
+
+### **Here’s a key snippet from the encoder showing this chunked approach:**
+
+```python
+def encode_chunk(chunk):
+    bits = bytes_to_bits(chunk)
+    symbols = bits_to_symbols(bits)
+    audio_signal = symbols_to_audio(symbols)
+    sf.write(output_path, audio_signal, fs, subtype='PCM_16', append=True)  
+
+with open(input_path, "rb") as f:
+    while True:
+        chunk = f.read(chunk_size)
+        if not chunk:
+            break
+        encode_chunk(chunk)
+```
+
+This approach uses the append=True flag in the soundfile.write function to write audio data as it's generated to the output WAV file without loading everything into memory.
+
+The result is a very efficient, scalable file-to-audio encoder and decoder that maintains perfect file fidelity, even for very large files. I’m excited to keep building onto this foundation with new features like hardware integration and advanced encryption layers.
