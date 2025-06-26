@@ -13,7 +13,8 @@ yes, the executable is safe, it's just the python script converted to an exe fil
 
 **This is in being Actively Worked on so dont expect it to be Perfectly Smooth.**
 
-**THIS IS NOT A VIRUS, I converted the python generator script to an executable
+**This may appear to be a virus to any anti-virus, this happens with the Exe sinec I converted the
+python generator script to an executable
 and now it's having false positives.**
 
 # **How it works**
