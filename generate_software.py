@@ -11,7 +11,7 @@ random.seed()
 
 frequencies = sorted(random.sample(range(FREQ_MIN, FREQ_MAX), FREQ_COUNT))
 
-# Encoder template with streaming write, using placeholder and .format to avoid f-string interpolation issues
+# Encoder template
 ENCODER_TEMPLATE = textwrap.dedent("""
 import numpy as np
 import soundfile as sf
@@ -26,7 +26,6 @@ symbol_duration = 0.005
 bits_per_symbol = 6
 frequencies = {frequencies}
 
-# Precompute waveform for each symbol
 samples_per_symbol = int(fs * symbol_duration)
 t = np.linspace(0, symbol_duration, samples_per_symbol, endpoint=False)
 base_waveforms = {{
@@ -34,7 +33,6 @@ base_waveforms = {{
     for sym in range(len(frequencies))
 }}
 
-# Conversion helpers
 def bytes_to_bits(data):
     return [(byte >> (7 - i)) & 1 for byte in tqdm(data, desc="📊 Converting bytes to bits") for i in range(8)]
 
@@ -50,7 +48,6 @@ def bits_to_symbols(bits):
         symbols.append(val)
     return symbols
 
-# Metadata packaging
 def get_file_metadata(path):
     name = os.path.basename(path)
     return name.encode("utf-8")
@@ -83,9 +80,8 @@ if __name__ == "__main__":
     print("🔄 Converting to symbols...")
     symbols = bits_to_symbols(bits)
 
-    # Prepare output file
     output_path = os.path.splitext(input_path)[0] + ".wav"
-    print(f"🎵 Streaming encoding to {{output_path}}...")
+    print(f"🔊 Streaming encoding to {{output_path}}...")
     with sf.SoundFile(output_path, mode='w', samplerate=fs, channels=1, subtype='PCM_16') as wavfile:
         for sym in tqdm(symbols, desc="🔊 Writing symbols to file"):
             wavfile.write(base_waveforms[sym])
@@ -109,7 +105,6 @@ symbol_duration = 0.005
 bits_per_symbol = 6
 frequencies = {frequencies}
 
-# Precompute waveforms for correlation
 t_samples = int(fs * symbol_duration)
 t = np.linspace(0, symbol_duration, t_samples, endpoint=False)
 base_waves = np.array([
@@ -117,7 +112,6 @@ base_waves = np.array([
     for f in frequencies
 ])
 
-# Helpers for conversion
 def decode_audio_to_symbols_streaming(input_wav, frequencies):
     symbols = []
     with sf.SoundFile(input_wav) as wavfile:
