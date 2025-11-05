@@ -9,13 +9,11 @@ def reconstruct_file():
     print("🔧 File Reconstructor")
     print("====================\n")
 
-    # Ask for output filename
     output_filename = input("Enter output filename (e.g., output.pdf): ").strip()
     if not output_filename:
         print("❌ No filename provided. Exiting.")
         sys.exit(0)
 
-    # File picker for .txt dump
     root = tk.Tk()
     root.withdraw()
     dump_path = filedialog.askopenfilename(
@@ -29,11 +27,9 @@ def reconstruct_file():
 
     print(f"📄 Reading hex dump: {dump_path}")
 
-    # Read file content
     with open(dump_path, "r", encoding="utf-8", errors="ignore") as f:
         hex_text = f.read()
 
-    # Clean up hex (remove anything not a hex character)
     hex_clean = re.sub(r'[^0-9A-Fa-f]', '', hex_text)
 
     if len(hex_clean) % 2 != 0:
@@ -46,7 +42,6 @@ def reconstruct_file():
         print(f"❌ Error converting hex to binary: {e}")
         sys.exit(1)
 
-    # Write reconstructed file
     output_path = os.path.join(os.path.dirname(dump_path), output_filename)
     with open(output_path, "wb") as f:
         f.write(binary_data)
@@ -55,7 +50,6 @@ def reconstruct_file():
     print(f"\n✅ Successfully reconstructed: {output_path}")
     print(f"📏 File size: {size} bytes")
 
-    # Show basic header info for verification
     header = binary_data[:8]
     print(f"🔍 First 8 bytes: {header.hex(' ')}")
     if binary_data.startswith(b'%PDF'):
@@ -72,4 +66,5 @@ def reconstruct_file():
     input("\nPress Enter to exit...")
 
 if __name__ == "__main__":
+
     reconstruct_file()
