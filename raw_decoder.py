@@ -9,7 +9,7 @@ from tkinter import filedialog
 fs = 22050
 symbol_duration = 0.005
 bits_per_symbol = 6
-frequencies = [1154, 1187, 1207, 1232, 1309, 1533, 1587, 1676, 1940, 1987, 2062, 2103, 2153, 2257, 2307, 2403, 3010, 3052, 3055, 3244, 3246, 3342, 3416, 3528, 3559, 3668, 3772, 3777, 3857, 3910, 4098, 4220, 4304, 4448, 4521, 4543, 4672, 4681, 4786, 4800, 4899, 5043, 5157, 5281, 5722, 5745, 5753, 5857, 5969, 6047, 6198, 6282, 6662, 6793, 6874, 7008, 7009, 7172, 7367, 7626, 7725, 7763, 7847, 7980]
+frequencies = [] # 64 Frequencies go Here
 
 t_samples = int(fs * symbol_duration)
 t = np.linspace(0, symbol_duration, t_samples, endpoint=False)
@@ -93,4 +93,5 @@ if __name__ == "__main__":
         f.write(hex_dump)
 
     print(f"✅ Dump complete! ({len(file_data)} bytes written to file)")
+
     input("Press Enter to exit...")
