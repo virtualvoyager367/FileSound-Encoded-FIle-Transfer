@@ -6,7 +6,10 @@ but if you want to know the exact number its **949781856816046480879985431476587
 
 # **Things to Know**
 
-**The encoded WAV version is approximately 295 times larger than the original file.**
+**DISCLAIMER:** Sometimes the decrypted file may have issues, if this happens regenerate the encoder and decoder and encode and decode the file again, at the bottom is a in depth explanation of why this could happen.
+
+**The encoded WAV version is approximately 295 times larger than the original file, so stick to smaller files unless you have what you need to
+convert larger files.**
 
 **The .py file in the repository is just meant for open-sourcing it, if you want to run it download the newest EXE version.
 yes, the executable is safe, it's just the python script converted to an exe file.**
@@ -74,3 +77,5 @@ with open(input_path, "rb") as f:
 This approach uses the append=True flag in the soundfile.write function to write the audio data as it's generated to the output WAV file without loading everything into memory.
 The result is a very efficient, scalable file-to-audio encoder and decoder that maintains perfect file fidelity, even for very large files. I’m excited to keep building onto this project with many more features coming over time.
 The result is a very efficient, scalable file-to-audio encoder and decoder that maintains perfect file fidelity, even for very large files. I’m excited to keep building onto this foundation with new features like hardware integration and advanced encryption layers.
+
+If you read the disclaimer, you will know what this is for. The reason why you may need to regenerate the python files is because sometimes when the frequencies are generated, they can be similar or close to other frequencies, causing overlap or misinterpretation, these lead the decoder to misinterpret the frequencies leading to the decoder getting incorrect output, which is why you need to regenerate the scripts as different frequency lists work better than others, the less similar the frequencies the lower the chances are of misinterpretation.
