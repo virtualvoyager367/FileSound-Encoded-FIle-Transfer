@@ -74,7 +74,7 @@ with open(input_path, "rb") as f:
         encode_chunk(chunk)
 ```
 
-This approach uses the append=True flag in the soundfile.write function to write the audio data as it's generated to the output WAV file without loading everything into memory.
+This method uses the append=True flag in the soundfile.write function to write the audio data as it's generated to the output WAV file without loading everything into memory.
 The result is a very efficient, scalable file-to-audio encoder and decoder that maintains perfect file fidelity, even for very large files. I’m excited to keep building onto this project with many more features coming over time.
 The result is a very efficient, scalable file-to-audio encoder and decoder that maintains perfect file fidelity, even for very large files. I’m excited to keep building onto this foundation with new features like hardware integration and advanced encryption layers.
 
